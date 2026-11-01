@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scapula & Shoulder — Random Practice Selector</title>
+<style>
+:root{--navy:#142d58;--blue:#2456a6;--ink:#17294b;--muted:#66738e;--lav:#ecebff;--line:#d6ddf5;--bg:#f7f8ff;--coral:#f56e7b;--purple:#6845c5}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f4f6ff,#fff 55%,#edf2ff);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+header{background:linear-gradient(110deg,#102750,#213c70);color:white;padding:22px clamp(16px,4vw,54px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 8px 25px #152d5826}
+.brand{display:flex;align-items:center;gap:14px}.logo{font-size:42px;background:#ffffff18;border:1px solid #ffffff30;border-radius:18px;padding:7px 12px}.brand h1{font-size:clamp(23px,3vw,36px);margin:0;letter-spacing:-.8px}.brand p{margin:4px 0 0;color:#d4defb}.tagline{font-size:clamp(14px,1.7vw,20px);font-style:italic;color:#e1e8ff}
+main{max-width:1120px;margin:0 auto;padding:28px 18px 54px}.intro{text-align:center;margin:5px auto 24px}.intro h2{font-size:clamp(25px,4vw,38px);margin:0 0 8px;color:#193768}.intro p{margin:0;color:var(--muted)}
+.primary{display:block;margin:0 auto 24px;border:0;border-radius:18px;padding:18px 28px;background:linear-gradient(120deg,#2859a9,#102e60);color:white;font-size:clamp(17px,2.5vw,24px);font-weight:800;box-shadow:0 8px 0 #0a2047,0 15px 28px #203e7626;cursor:pointer;transition:transform .15s}.primary:hover{transform:translateY(-2px)}button{font:inherit;cursor:pointer}
+.result{background:#fff;border:1px solid #f4c6c6;border-radius:25px;padding:clamp(22px,4vw,42px);text-align:center;box-shadow:0 16px 40px #263d7612;position:relative;overflow:hidden}.result:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,#fff0df75,transparent 35%),radial-gradient(ellipse at 90% 50%,#dce8ff80,transparent 35%);pointer-events:none}.result>*{position:relative}.eyebrow{display:inline-block;background:#e8e4ff;color:#343c71;padding:9px 20px;border-radius:999px;font-weight:750;margin-bottom:15px}.movement{font-size:clamp(27px,5vw,48px);font-weight:850;letter-spacing:-1px;margin:0 auto 12px;line-height:1.15}.with{color:var(--muted);font-weight:650;margin-bottom:8px}.grade{display:inline-block;background:#ffe0e4;border:2px solid #ff9aa5;color:#a52339;padding:9px 30px;border-radius:16px;font-size:clamp(29px,5vw,48px);font-weight:900}.subnote{color:var(--muted);font-size:13px;margin-top:14px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}.secondary{border:1.5px solid #b9c9f5;background:#fff;color:#214b9a;border-radius:14px;padding:12px 18px;font-weight:750}.secondary:hover{background:#f0f4ff}.secondary.purple{color:var(--purple);border-color:#d4c8ff}.secondary.dark{color:var(--ink);border-color:#cbd3e5}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 12px;text-align:center}.stat strong{display:block;font-size:19px;color:#204a91}.stat span{font-size:13px;color:var(--muted)}
+.panel{margin-top:28px;background:white;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 10px 25px #2037650b}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.panel h3{margin:0;font-size:23px}.tools{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.tools input,.tools select{border:1px solid #cbd4e9;border-radius:10px;padding:10px 12px;background:#fff;color:var(--ink);min-width:150px}.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e1e6f5;border-radius:13px;padding:13px}.item small{display:block;color:var(--muted);font-size:12px;margin-top:4px}.pill{flex-shrink:0;border-radius:10px;padding:7px 10px;background:#e8edff;color:#204a91;font-weight:850}.pill.g0{background:#edf0f5;color:#566174}.pill.g1{background:#e9f3ff;color:#275da3}.pill.g2{background:#e8f8f1;color:#17714f}.pill.g3{background:#fff4d9;color:#8a5a00}.pill.g4{background:#ffe4e6;color:#a52339}.pill.g5{background:#efe5ff;color:#6737a6}.hidden{display:none}.empty{color:var(--muted);padding:18px;text-align:center;grid-column:1/-1}
+footer{text-align:center;color:#7c88a2;font-size:13px;padding:8px 15px 28px}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.list{grid-template-columns:1fr}.tagline{width:100%}.result{padding:25px 16px}.primary{width:100%}.brand{align-items:flex-start}.logo{font-size:30px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo" aria-hidden="true">🦴</div><div><h1>Scapula & Shoulder</h1><p>Random Practice Selector 🎯</p></div></div>
+  <div class="tagline">Test Yourself… Be 100% Ready! 🏆</div>
+</header>
+<main>
+  <section class="intro"><h2>Ready for your practical?</h2><p>Practice movements and grades in a shuffled order — no spoilers until you pick.</p></section>
+  <button class="primary" id="pickBtn">⤨ &nbsp; Pick a Random Movement</button>
+  <section class="result" aria-live="polite">
+    <div class="eyebrow">Your Random Selection</div>
+    <h2 class="movement" id="movement">Tap the button to start</h2>
+    <div class="with" id="withText">Your next practice prompt is waiting</div>
+    <div class="grade" id="grade">Grade —</div>
+    <div class="subnote" id="note">Use this as a recall prompt, then check your practical technique against your course instructions.</div>
+  </section>
+  <div class="actions">
+    <button class="secondary" id="againBtn">↻ &nbsp; Draw Again</button>
+    <button class="secondary purple" id="tenBtn">🎲 &nbsp; Random 10</button>
+    <button class="secondary dark" id="listBtn">☷ &nbsp; View Full List</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong id="totalStat">38</strong><span>Prompts in your list</span></div>
+    <div class="stat"><strong>0–5</strong><span>Grades included</span></div>
+    <div class="stat"><strong>🔀 Shuffled</strong><span>Random practice</span></div>
+    <div class="stat"><strong>🎯 Practical</strong><span>Exam prep</span></div>
+  </div>
+  <section class="panel hidden" id="tenPanel">
+    <div class="panel-head"><h3>Your Random 10</h3><button class="secondary" id="refreshTen">↻ Shuffle 10</button></div>
+    <p style="color:var(--muted);margin:7px 0 0">Ten distinct prompts from the list. The full list below contains all entries.</p>
+    <div class="list" id="tenList" style="margin-top:15px"></div>
+  </section>
+  <section class="panel hidden" id="fullPanel">
+    <div class="panel-head"><h3>Full Practice List</h3><span id="countLabel" style="color:var(--muted)">38 prompts</span></div>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search movement…" aria-label="Search movement">
+      <select id="gradeFilter" aria-label="Filter by grade"><option value="">All grades</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+    </div>
+    <div class="list" id="fullList"></div>
+  </section>
+</main>
+<footer>Study helper only — follow your instructor’s grading criteria and practical exam protocol.</footer>
+<script>
+const prompts = [
+["Scapular Elevation",1],["Shoulder Horizontal Abduction",4],["Shoulder Internal Rotation",2],
+["Scapular Abduction and Upward Rotation",5],["Shoulder Flexion to 90 Degrees",3],
+["Shoulder External Rotation",0],["Scapular Adduction",4],["Scapular Depression and Adduction (Partial ROM)",2],
+["Shoulder Abduction to 90 Degrees",3],["Shoulder Extension",4],["Shoulder Abduction to 90 Degrees",1],
+["Scapular Adduction and Downward Rotation",4],["Shoulder Horizontal Adduction",3],["Scapular Elevation",2],
+["Shoulder External Rotation",4],["Scapular Abduction and Upward Rotation",0],["Scapular Adduction",3],
+["Scapular Depression and Adduction",4,"Alternate"],["Shoulder Abduction to 90 Degrees",2],
+["Scapular Abduction and Upward Rotation",4],["Shoulder Flexion to 90 Degrees",1],["Shoulder Extension",3],
+["Scapular Adduction and Downward Rotation",2],["Shoulder Horizontal Adduction",4],["Scapular Elevation",3],
+["Shoulder Flexion to 90 Degrees",4],["Shoulder Horizontal Abduction",2],["Scapular Depression and Adduction",5],
+["Shoulder Internal Rotation",3],["Scapular Adduction",4],["Shoulder Extension",2],
+["Scapular Abduction and Upward Rotation",3],["Shoulder Abduction to 90 Degrees",4],
+["Scapular Adduction and Downward Rotation",3],["Shoulder Flexion to 90 Degrees",2],
+["Scapular Depression and Adduction",3],["Shoulder External Rotation",2],["Scapular Elevation",4]
+].map((p,i)=>({id:i+1,movement:p[0],grade:p[1],note:p[2]||""}));
+let lastIndex=-1;
+const $=id=>document.getElementById(id);
+function pickOne(){
+  let idx=Math.floor(Math.random()*prompts.length);
+  if(prompts.length>1) while(idx===lastIndex) idx=Math.floor(Math.random()*prompts.length);
+  lastIndex=idx; const p=prompts[idx];
+  $("movement").textContent=p.movement;
+  $("withText").textContent="with";
+  $("grade").textContent="Grade "+p.grade+(p.note?" ("+p.note+")":"");
+  $("note").textContent="Prompt "+p.id+" of "+prompts.length+" · Recall the assessment setup and grading criteria taught in your course.";
+}
+function shuffled(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function renderItems(target,items){
+ target.innerHTML="";
+ if(!items.length){target.innerHTML='<div class="empty">No matching prompts found.</div>';return}
+ items.forEach(p=>{
+  const el=document.createElement("div");el.className="item";
+  const name=document.createElement("div");name.textContent=p.movement;
+  const meta=document.createElement("small");meta.textContent="Prompt "+p.id+(p.note?" · "+p.note:"");name.appendChild(meta);
+  const pill=document.createElement("span");pill.className="pill g"+p.grade;pill.textContent="Grade "+p.grade+(p.note?"*":"");
+  el.append(name,pill);target.appendChild(el);
+ });
+}
+function showTen(){ $("tenPanel").classList.remove("hidden");renderItems($("tenList"),shuffled(prompts).slice(0,10)); }
+function showFull(){ $("fullPanel").classList.remove("hidden");filterList(); }
+function filterList(){
+ const q=$("search").value.trim().toLowerCase(),g=$("gradeFilter").value;
+ const filtered=prompts.filter(p=>p.movement.toLowerCase().includes(q)&&(g===""||String(p.grade)===g));
+ renderItems($("fullList"),filtered);$("countLabel").textContent=filtered.length+" of "+prompts.length+" prompts";
+}
+$("pickBtn").addEventListener("click",pickOne);$("againBtn").addEventListener("click",pickOne);
+$("tenBtn").addEventListener("click",()=>{showTen();$("tenPanel").scrollIntoView({behavior:"smooth",block:"start"})});
+$("refreshTen").addEventListener("click",showTen);
+$("listBtn").addEventListener("click",()=>{showFull();$("fullPanel").scrollIntoView({behavior:"smooth",block:"start"})});
+$("search").addEventListener("input",filterList);$("gradeFilter").addEventListener("change",filterList);
+$("totalStat").textContent=prompts.length;
+</script>
+</body>
+</html>
